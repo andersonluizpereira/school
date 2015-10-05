@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58C95584-7B0D-409F-A31E-B09A596304B7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAOS</RootNamespace>
+    <AssemblyName>DAOS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\Quiron.LojaVirtual\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\Quiron.LojaVirtual\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\..\Users\Andy\Desktop\MongoDB\Dao.DataAccess.MongoDb-master\Dao.DataAccess.MongoDb-master\Lib\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\..\Users\Andy\Desktop\MongoDB\Dao.DataAccess.MongoDb-master\Dao.DataAccess.MongoDb-master\Lib\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\Users\Andy\Desktop\Nethus\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\2014-01-24\2014-01-24\projeto_inicial\CaelumEstoque\bin\System.Data.SQLite.DLL</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\DbSetting.cs" />
+    <Compile Include="Entity\Initialization.cs" />
+    <Compile Include="Entity\MongoDbContext.cs" />
+    <Compile Include="Entity\MongoDbEntityMap.cs" />
+    <Compile Include="Entity\MongoDbHelper.cs" />
+    <Compile Include="Entity\MongoDbRepository.cs" />
+    <Compile Include="LayerDao\Dao.cs" />
+    <Compile Include="LayerDao\DBSession.cs" />
+    <Compile Include="LayerDao\SchoolDao.cs" />
+    <Compile Include="LayerDao\SchoolDaoMongo.cs" />
+    <Compile Include="Models\Classroom.cs" />
+    <Compile Include="Models\Cours.cs" />
+    <Compile Include="Models\Grade.cs" />
+    <Compile Include="Models\Mapping\ClassroomMap.cs" />
+    <Compile Include="Models\Mapping\CoursMap.cs" />
+    <Compile Include="Models\Mapping\GradeMap.cs" />
+    <Compile Include="Models\Mapping\RoleMap.cs" />
+    <Compile Include="Models\Mapping\StudentMap.cs" />
+    <Compile Include="Models\Mapping\sysdiagramMap.cs" />
+    <Compile Include="Models\Mapping\TeacherMap.cs" />
+    <Compile Include="Models\Mapping\UsersLoginMap.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\SchoolContext.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\Teacher.cs" />
+    <Compile Include="Models\UsersLogin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
