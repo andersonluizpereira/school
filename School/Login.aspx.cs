@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 using System.Web.Security;
 using System.Security.Cryptography;
 using DAOS.LayerDao;
-
+using GenericFunctions;
 
 
 namespace School
@@ -18,9 +18,10 @@ namespace School
     public partial class Login : System.Web.UI.Page
     {
         SchoolDao scDao;
+        FunctionsGen fugen = new FunctionsGen();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            scDao.GravaLog("Acessando a página login.aspx");
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -46,6 +47,7 @@ namespace School
 
             else {
                 lblMsg.Text = "Invalid email or password";
+                scDao.GravaLog("Invalid email or password");
             
             }
 

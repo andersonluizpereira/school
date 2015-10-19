@@ -7,33 +7,53 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GenericFunctions;
+using DAOS.LayerDao;
+
 
 namespace DAOS.LayerDao
 {
-  public abstract  class Dao
+    public abstract class Dao
     {
         protected SqlConnection cn; //mantém a conexão com o bd
         protected SqlCommand cmd; // executa instruções de procedures
         protected SqlDataReader reader; // consultas - modo conectado
         protected SqlDataAdapter da; //Consultas modo desconectado
+         
 
-       // private String conexao = "Persist Security Info=False;server=localhost;database=portal;uid=root;pwd=''";
         protected String conexao = ConfigurationManager.ConnectionStrings["SchoolDB"].ConnectionString;
+   
+        // protected String conexao = ConfigurationManager.ConnectionStrings["DES"].ConnectionString;
+        // protected String conexao = ConfigurationManager.AppSettings.Keys[1].ToString();
+        //protected String conexao = ConfigurationManager.ConnectionStrings[FunctionsGen.GetEnvironmentVariableServerPre].ConnectionString;
 
         public Dao()
         {
+            SchoolDao scdao = new SchoolDao();
+            try
+            {
 
-            cn = new SqlConnection(conexao);
-            cmd = new SqlCommand();
-            da = new SqlDataAdapter();
+                scdao.GravaLog("Acessando Dao dados " + conexao);
+                cn = new SqlConnection(conexao);
+                cmd = new SqlCommand();
+                da = new SqlDataAdapter();
 
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+                scdao.GravaLog("Erro " + ex);
+            }
 
         }
 
         public void OpenConnection()
         {
+            SchoolDao scdao = new SchoolDao();
             try
             {
+                scdao.GravaLog("Abrindo conexão");
                 cn.Open();
                 cmd.Connection = cn;
             }
@@ -41,6 +61,7 @@ namespace DAOS.LayerDao
             {
 
                 throw ex;
+                scdao.GravaLog("Erro " + ex);
             }
 
 
@@ -57,5 +78,5 @@ namespace DAOS.LayerDao
         }
 
     }
-    
+
 }

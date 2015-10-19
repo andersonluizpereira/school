@@ -89,7 +89,7 @@
                     <div class="form-group">
   <label class="col-md-10 control-label" for="textinput">Filter by Last Name:</label>  
   <div class="col-md-10">
-        <asp:TextBox ID="txtFilterLastName" runat="server" class="form-control input-md" placeholder="Last Name" required > </asp:TextBox>
+        <asp:TextBox ID="txtFilterLastName" runat="server" class="form-control input-md" placeholder="Last Name"  > </asp:TextBox>
     
   </div>
 </div>
@@ -171,6 +171,20 @@
                         <PagerSettings Mode="NumericFirstLast" PageButtonCount="3" FirstPageText="First" LastPageText="Last" />
 
                     </asp:GridView>
+                            <br />
+<p><div class="form-group">
+  <label class="col-md-10 control-label" for="button1id">Export </label>
+  <div class="col-md-8">
+    
+
+       <asp:Button ID="ButtonExportToXML"  class="btn btn-success" runat="server" Text="Export XML" OnClick="ButtonExportToXML_Click" />
+      <asp:Button ID="ButtonExportToExcel"  class="btn btn-success" runat="server" Text="Export Excel" OnClick="ButtonExportToExcel_Click"  />
+     <p> <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label></p>
+  </div>
+</div></p>
+
+
+
  </div>
                         </div>
                 </div>

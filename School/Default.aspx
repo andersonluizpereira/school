@@ -49,6 +49,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li> <asp:HyperLink ID="hlTeachers" runat="server" NavigateUrl="~/Theachers.aspx">Teachers</asp:HyperLink></li>
+              <li> <asp:HyperLink ID="hlCourses" runat="server" NavigateUrl="~/Courses.aspx">Courses</asp:HyperLink></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="dropdown">

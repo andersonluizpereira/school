@@ -75,6 +75,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Courses.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Login.aspx" />
@@ -99,6 +100,13 @@
     <Content Include="Scripts\jquery-2.1.4.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Courses.aspx.cs">
+      <DependentUpon>Courses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Courses.aspx.designer.cs">
+      <DependentUpon>Courses.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -140,6 +148,10 @@
     <ProjectReference Include="..\DAOS\DAOS.csproj">
       <Project>{58c95584-7b0d-409f-a31e-b09a596304b7}</Project>
       <Name>DAOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GenericFunctions\GenericFunctions.vbproj">
+      <Project>{dc162325-bb1e-4ca3-8836-cc53fb05d9ff}</Project>
+      <Name>GenericFunctions</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

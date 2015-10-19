@@ -15,6 +15,7 @@ namespace School
         SchoolDao scDao;
         Teacher teachers;
         string Sort_Direction = "TeacherID ASC";
+        DataView dvTeachers = new DataView();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -33,7 +34,7 @@ namespace School
                 DataTableReader reader = scDao.ListTeachers().CreateDataReader();
                 DataTable dtTeachers = new DataTable();
                 dtTeachers.Load(reader);
-                DataView dvTeachers = dtTeachers.DefaultView;
+                dvTeachers = dtTeachers.DefaultView;
 
                 dvTeachers.Sort = ViewState["SortExpr"].ToString();
 
@@ -229,6 +230,63 @@ namespace School
 
               FillGrid();
           }
+
+        }
+
+        protected void ButtonExportToXML_Click(object sender, EventArgs e)
+        {
+            FillGrid();
+            try
+            {
+                DataTable dtXml = new DataTable();
+                dtXml = dvTeachers.ToTable("Teachers");
+                dtXml.WriteXml(@"C:\Projetos\School\print\Teachers.xml");
+                lblMsg.Text = "Export to XML OK !";
+            }
+            catch (Exception ex)
+            {
+
+                lblMsg.Text = "Error to Export to XMl: " + ex.ToString();
+            }
+        }
+
+        protected void ButtonExportToExcel_Click(object sender, EventArgs e)
+        {
+            FillGrid();
+            try
+            {
+                DataTable dtExcel = new DataTable();
+                dtExcel = dvTeachers.ToTable("Teachers");
+                string attachment = "attachment; filename=teachers.xls";
+                Response.ClearContent();
+                Response.AddHeader("content-disposition", attachment);
+                Response.ContentType = "application/vnd.ms-excel";
+                string tab = "";
+                foreach (DataColumn dc in dtExcel.Columns)
+                {
+                    Response.Write(tab + dtExcel.Columns[dc.ColumnName].ToString());
+                    tab = "\t";
+                    
+                }
+                Response.Write("\n");
+                int i;
+                foreach (DataRow drExcel in dtExcel.Rows)
+                {
+                    tab = "";
+                    for (i = 0; i < dtExcel.Columns.Count;i++ )
+                    {
+                        Response.Write(tab+drExcel[i].ToString());
+                        tab = "\t";
+                    }
+                    Response.Write("\n");
+                }
+                Response.End();
+            }
+            catch (Exception ex)
+            {
+                
+                lblMsg.Text = "Error to Export to Excel: " + ex.ToString();
+            }
 
         }
         
