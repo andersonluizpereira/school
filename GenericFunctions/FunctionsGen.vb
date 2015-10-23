@@ -9,7 +9,7 @@
         Friday
         Saturday
     End Enum
-    ' Retorna o nome do dia da semana.
+    ' Retorna o nome do dia da semana..
     Public Function DiaDaSemanaVal(ByVal pstr_data As String) As String
 
 
