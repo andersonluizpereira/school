@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <Teachers>
+    <TeacherID>1</TeacherID>
+    <TeacherLastName>Chuma</TeacherLastName>
+    <TeacherFirstName>Euclides</TeacherFirstName>
+    <TeacherDateJoin>2000-01-01T00:00:00-02:00</TeacherDateJoin>
+    <TeacherDepartment>Science</TeacherDepartment>
+  </Teachers>
+  <Teachers>
+    <TeacherID>6</TeacherID>
+    <TeacherLastName>Pedrosa</TeacherLastName>
+    <TeacherFirstName>Pedro</TeacherFirstName>
+    <TeacherDateJoin>2010-01-01T00:00:00-02:00</TeacherDateJoin>
+    <TeacherDepartment>Mathematics</TeacherDepartment>
+  </Teachers>
+  <Teachers>
+    <TeacherID>8</TeacherID>
+    <TeacherLastName>Maria</TeacherLastName>
+    <TeacherFirstName>Maria</TeacherFirstName>
+    <TeacherDateJoin>2009-01-01T00:00:00-02:00</TeacherDateJoin>
+    <TeacherDepartment>Science</TeacherDepartment>
+  </Teachers>
+  <Teachers>
+    <TeacherID>9</TeacherID>
+    <TeacherLastName>Rita</TeacherLastName>
+    <TeacherFirstName>Ritinha</TeacherFirstName>
+    <TeacherDateJoin>2013-01-01T00:00:00-02:00</TeacherDateJoin>
+    <TeacherDepartment>Biology</TeacherDepartment>
+  </Teachers>
+  <Teachers>
+    <TeacherID>10</TeacherID>
+    <TeacherLastName>Antonia</TeacherLastName>
+    <TeacherFirstName>Antonina</TeacherFirstName>
+    <TeacherDateJoin>2015-09-28T17:02:43.52-03:00</TeacherDateJoin>
+    <TeacherDepartment>Biology</TeacherDepartment>
+  </Teachers>
+</DocumentElement>
