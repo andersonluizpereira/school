@@ -1,14 +1,7 @@
 ﻿
-using System.Data;
 using System.Data.SqlClient;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GenericFunctions;
-using DAOS.LayerDao;
 
 
 namespace DAOS.LayerDao
@@ -33,7 +26,6 @@ namespace DAOS.LayerDao
             try
             {
 
-                scdao.GravaLog("Acessando Dao dados " + conexao);
                 cn = new SqlConnection(conexao);
                 cmd = new SqlCommand();
                 da = new SqlDataAdapter();
@@ -43,7 +35,7 @@ namespace DAOS.LayerDao
             {
 
                 throw ex;
-                scdao.GravaLog("Erro " + ex);
+              
             }
 
         }
@@ -61,7 +53,7 @@ namespace DAOS.LayerDao
             {
 
                 throw ex;
-                scdao.GravaLog("Erro " + ex);
+             
             }
 
 

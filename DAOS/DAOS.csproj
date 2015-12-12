@@ -68,8 +68,10 @@
     <Compile Include="Entity\MongoDbRepository.cs" />
     <Compile Include="LayerDaoEnvironment\DaoSqlServer.cs" />
     <Compile Include="LayerDao\Dao.cs" />
+    <Compile Include="LayerDao\DaoADOdb.cs" />
     <Compile Include="LayerDao\DaoMySQL.cs" />
     <Compile Include="LayerDao\DBSession.cs" />
+    <Compile Include="LayerDao\PastoralDao.cs" />
     <Compile Include="LayerDao\SchoolDao.cs" />
     <Compile Include="LayerDao\SchoolDaoMongo.cs" />
     <Compile Include="Models\Classroom.cs" />

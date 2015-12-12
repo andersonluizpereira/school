@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School", "School\School.csproj", "{13D28A9D-C809-42BD-8014-C7C8F6341615}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolTests", "SchoolTests\SchoolTests.csproj", "{043D1A06-6B09-48F6-A15F-83F6B115E6D7}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GenericFunctions", "GenericFunctions\GenericFunctions.vbproj", "{DC162325-BB1E-4CA3-8836-CC53FB05D9FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pastoral", "Pastoral\Pastoral.csproj", "{1B3ED732-89D3-478F-BE21-5C750AE02632}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +32,10 @@ Global
 		{DC162325-BB1E-4CA3-8836-CC53FB05D9FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC162325-BB1E-4CA3-8836-CC53FB05D9FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC162325-BB1E-4CA3-8836-CC53FB05D9FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B3ED732-89D3-478F-BE21-5C750AE02632}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3ED732-89D3-478F-BE21-5C750AE02632}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B3ED732-89D3-478F-BE21-5C750AE02632}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B3ED732-89D3-478F-BE21-5C750AE02632}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

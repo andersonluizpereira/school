@@ -1,5 +1,12 @@
 ﻿Public Class FunctionsGen
-
+    'Retorno de comandos
+    Public Enum CommandType
+        ExecuteNonQuery
+        ExecuteReader
+        ExecuteScalar
+        ExecuteDataTable
+        ExecuteDataSet
+    End Enum
     Public Enum DayOfWeek
         Sunday
         Monday
@@ -354,7 +361,6 @@
         strAmbDevelopment = Environment.GetEnvironmentVariable("AMBDEVELOPMENT")
         Return strAmbDevelopment
     End Function
-
     'Cria um novo arquivo texto informando o local. O true indica que é para acrescentar
     Public Sub GravaLog(ByVal Message As String)
         Dim ambiente As String = GetEnvironmentVariableServerPre()
@@ -369,5 +375,17 @@
         GravaMes.Close()
 
     End Sub
+
+    'Captura o IP
+    Public Shared Function GetIPAddress() As String
+        Dim context As System.Web.HttpContext = System.Web.HttpContext.Current
+        Dim sIPAddress As String = context.Request.ServerVariables("HTTP_X_FORWARDED_FOR")
+        If String.IsNullOrEmpty(sIPAddress) Then
+            Return context.Request.ServerVariables("REMOTE_ADDR")
+        Else
+            Dim ipArray As String() = sIPAddress.Split(New [Char]() {","c})
+            Return ipArray(0)
+        End If
+    End Function
 
 End Class

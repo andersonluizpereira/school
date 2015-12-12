@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.Security;
 using DAOS.Models;
-using DAOS.LayerDaoEnvironment;
 using GenericFunctions;
 
 namespace DAOS.LayerDao
@@ -75,14 +69,13 @@ namespace DAOS.LayerDao
                 cmd.CommandText = "GetTeachers";
                 da.SelectCommand = cmd;
                 da.Fill(dt);
-                GravaLog("Acessando a lista de professores");
+              
 
             }
             catch (Exception ex)
             {
-
                 throw ex;
-                GravaLog(ex.Message.ToString());
+
             }
 
             finally {
@@ -198,6 +191,24 @@ namespace DAOS.LayerDao
         GravaMes.WriteLine("Mensagem  :" + _message.ToString());
         GravaMes.Close();
        
+       }
+
+       //Captura o IP
+       public string GetIPAddress()
+       {
+           System.Web.HttpContext context = System.Web.HttpContext.Current;
+           string ipAddress = context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+           if (!string.IsNullOrEmpty(ipAddress))
+           {
+               string[] addresses = ipAddress.Split(',');
+               if (addresses.Length != 0)
+               {
+                   return addresses[0];
+               }
+           }
+
+           return context.Request.ServerVariables["REMOTE_ADDR"];
        }
 
     }
